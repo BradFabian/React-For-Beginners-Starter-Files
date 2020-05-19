@@ -1,6 +1,6 @@
 import React from "react";
 {
-  /*Statless arrow function  */
+  /*Stateless arrow function  */
 }
 const NotFound = () => (
   <div>
