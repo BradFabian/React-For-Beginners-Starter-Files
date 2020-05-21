@@ -1,6 +1,18 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class EditFishForm extends React.Component {
+  static propTypes = {
+    fish: PropTypes.shape({
+      image: PropTypes.string,
+      name: PropTypes.string,
+      desc: PropTypes.string,
+      status: PropTypes.string,
+      price: PropTypes.number,
+    }),
+    index: PropTypes.string,
+    updateFish: PropTypes.func,
+  };
   handleChange = (event) => {
     console.log(event.currentTarget.value);
     // update that fish
@@ -33,7 +45,7 @@ class EditFishForm extends React.Component {
           value={this.props.fish.status}
         >
           <option value="available">Fresh!</option>
-          <option value="available">Sold Out!</option>
+          <option value="unavailable">Sold Out!</option>
         </select>
         <textarea
           name="desc"
